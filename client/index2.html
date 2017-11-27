@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook Login JavaScript</title>
+<meta charset="UTF-8">
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+<script src="js/client.js"></script>
+</head>
+<body>
+
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+<section class="hero is-small is-info is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Mini Facebook Apps
+      </h1>
+      <br/>
+      <h2 class="subtitle">
+        <div class="control has-text-centered">
+
+          <button class="button is-dark" id="login" onclick="FBLogin()"><i class="fa fa-facebook-official"> Login with Facebook </i> </button>
+        </div>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section id="allDataFB" class="hero is-dark">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="control">
+            <textarea id="post" class="textarea is-info" type="text" placeholder="What are you doing?"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="control has-text-centered">
+        <a id="postBtn" class="button is-info">
+          Post Status
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="status">
+</div>
+
+</body>
+</html>

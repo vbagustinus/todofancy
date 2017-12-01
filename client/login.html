@@ -76,7 +76,7 @@
               this.userfb = resStatus.authResponse.userID
               this.getLogin()
             } else {
-              window.location = "http://localhost:8080/login.html";
+              window.location = "http://todofancy.tk/login.html";
               console.log('User cancelled login or did not fully authorize.');
             }
           })
@@ -85,7 +85,7 @@
       },
       getLogin(){
         // console.log('INI TOKEN',   this.tokenfb);
-        axios.get('http://localhost:3000/login/fb', {
+        axios.get('http://api.todofancy.tk/login/fb', {
           headers: {
             accesstoken: this.tokenfb
           }
@@ -96,7 +96,7 @@
           localStorage.setItem('user_id', data.user_id)
           localStorage.setItem('username', data.name)
           localStorage.setItem('email', data.email)
-          window.location = "http://localhost:8080";
+          window.location = "http://todofancy.tk";
 
         })
         .catch(err => console.log(err))
@@ -107,7 +107,7 @@
           username : this.username,
           password : this.password
         }
-        axios.post('http://localhost:3000/login', input)
+        axios.post('http://api.todofancy.tk/login', input)
         .then( response => {
           console.log('HASIL LOGIN', response.data);
           if(!response.data.msg){
@@ -115,7 +115,7 @@
             localStorage.setItem('user_id', response.data.user_id)
             localStorage.setItem('username', response.data.name)
             localStorage.setItem('email', response.data.email)
-            window.location = "http://localhost:8080";
+            window.location = "http://todofancy.tk";
           } else {
             this.wrong = response.data.msg
           }
@@ -129,7 +129,7 @@
       let session = localStorage.getItem('tokenjwt')
       console.log('SESSIONMU', session);
       if(session){
-        window.location = "http://localhost:8080/";
+        window.location = "http://todofancy.tk/";
       }
       window.fbAsyncInit = function() {
         FB.init({

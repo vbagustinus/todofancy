@@ -80,7 +80,6 @@
               console.log('User cancelled login or did not fully authorize.');
             }
           })
-
         }, { scope: 'public_profile, email' });
       },
       getLogin(){
@@ -97,7 +96,6 @@
           localStorage.setItem('username', data.name)
           localStorage.setItem('email', data.email)
           window.location = "http://todofancy.tk";
-
         })
         .catch(err => console.log(err))
       },

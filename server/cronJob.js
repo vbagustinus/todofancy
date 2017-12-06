@@ -6,7 +6,7 @@ const User = require('./models/userModel')
 const ObjectId = require('mongodb').ObjectId
 const sendEmail = require('./helper/sendEmail');
 
-cron.schedule('0 6 * * *', function(){
+cron.schedule('0 0 6 * * *', function(){
   Task.find({})
   .populate('user_id')
   .then(dataTask =>{
